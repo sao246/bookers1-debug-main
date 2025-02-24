@@ -5,10 +5,10 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
     @book = Book.new
-    books = Book.all
   end
 
   def create
+    book = Book.new
     @book = Book.new(book_params)
     if @book.save
       flash[:notice] = "Book was successfully created."
